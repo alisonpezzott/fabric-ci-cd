@@ -1,0 +1,159 @@
+# This pipeline creates a new workspace 
+# when a new branch is checked out from an existing one.
+
+# Tools: PowerShell scripts using Fabric APIs
+
+# Author: Alison Pezzott 
+# Date: 2025-02-16
+
+name: 'CD - Create new workspace on branch checkout'
+
+trigger:
+  none
+
+pool:  
+  vmImage: 'windows-latest'
+
+variables:
+  - group: 'fabric_secrets'
+
+stages:
+
+  - stage: RunOnNewBranch
+    displayName: "Run on each new branch from another branch"
+    
+    jobs:
+    
+      - job: NotifyBranchCreated
+        displayName: "Branch Created Job"
+    
+        steps:
+
+          - task: PowerShell@2
+            displayName: "Check PowerShell version and environment"
+            inputs:
+              pwsh: true
+              targetType: 'inline'
+              script: |
+                $PSVersionTable
+                Get-Command pwsh
+
+          - checkout: self
+            clean: true
+            persistCredentials: true  # Allows writing to repo's files
+
+          - task: PowerShell@2
+            displayName: "Check Environment Variables"
+            inputs:
+              pwsh: true
+              targetType: 'inline'
+              script: |
+                Write-Host "FABRIC_TENANT_ID: '$(FABRIC_TENANT_ID)'"
+                Write-Host "FABRIC_CLIENT_ID: '$(FABRIC_CLIENT_ID)'"
+                Write-Host "FABRIC_CLIENT_SECRET: [HIDDEN]"
+                Write-Host "FABRIC_USERNAME: '$(FABRIC_USERNAME)'"
+                Write-Host "FABRIC_AUTOMATION_USERNAME: '$(FABRIC_AUTOMATION_USERNAME)'"
+                Write-Host "FABRIC_AUTOMATION_USER_PASSWORD: [HIDDEN]"
+
+          - task: PowerShell@2
+            displayName: "Set Workspace"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/set_workspace.ps1'
+            env:
+              FABRIC_TENANT_ID: $(FABRIC_TENANT_ID) 
+              FABRIC_CLIENT_ID: $(FABRIC_CLIENT_ID)
+              FABRIC_CLIENT_SECRET: $(FABRIC_CLIENT_SECRET)
+              FABRIC_USERNAME: $(FABRIC_USERNAME)
+              FABRIC_AUTOMATION_USERNAME: $(FABRIC_AUTOMATION_USERNAME)
+
+          - task: PowerShell@2
+            displayName: "Set Lakehouse"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/set_lakehouse.ps1'
+            env:
+              FABRIC_TENANT_ID: $(FABRIC_TENANT_ID) 
+              FABRIC_CLIENT_ID: $(FABRIC_CLIENT_ID)
+              FABRIC_CLIENT_SECRET: $(FABRIC_CLIENT_SECRET)
+
+          - task: PowerShell@2
+            displayName: "Replace connection in data_pipeline"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/replacement_data_pipeline.ps1'
+          
+          - task: PowerShell@2
+            displayName: "Replace workspace_id in notebook"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/replacement_notebook.ps1'
+          
+          - task: PowerShell@2
+            displayName: "Replace database in semantic_model"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/replacement_semantic_model.ps1'
+
+          - task: PowerShell@2
+            displayName: "Commit and push all updates"
+            inputs:
+              pwsh: true
+              targetType: 'inline'
+              script: |
+                git config --global user.email "alison.pezzott@fluentebi.com"
+                git config --global user.name "Alison Pezzott"
+                git checkout $(Build.SourceBranchName)
+                git pull origin $(Build.SourceBranchName) --rebase
+                git add .  # Adiciona todas as alterações
+                if (git diff --quiet --exit-code) {
+                    Write-Host "No changes to commit"
+                } else {
+                    git commit -m "Updating repository with latest changes"
+                    git push origin HEAD:$(Build.SourceBranchName)
+                }
+            condition: succeeded()
+
+          - task: PowerShell@2
+            displayName: "Initialize connection from workspace to Git"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/git_init.ps1'
+            env:
+              FABRIC_TENANT_ID: $(FABRIC_TENANT_ID) 
+              FABRIC_CLIENT_ID: $(FABRIC_CLIENT_ID)
+              FABRIC_CLIENT_SECRET: $(FABRIC_CLIENT_SECRET)
+              FABRIC_AUTOMATION_USERNAME: $(FABRIC_AUTOMATION_USERNAME)
+              FABRIC_AUTOMATION_USER_PASSWORD: $(FABRIC_AUTOMATION_USER_PASSWORD)
+          
+          - task: PowerShell@2
+            displayName: "Update from Git"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/update_from_git.ps1'
+            env:
+              FABRIC_TENANT_ID: $(FABRIC_TENANT_ID) 
+              FABRIC_CLIENT_ID: $(FABRIC_CLIENT_ID)
+              FABRIC_CLIENT_SECRET: $(FABRIC_CLIENT_SECRET)
+              FABRIC_AUTOMATION_USERNAME: $(FABRIC_AUTOMATION_USERNAME)
+              FABRIC_AUTOMATION_USER_PASSWORD: $(FABRIC_AUTOMATION_USER_PASSWORD)
+
+          - task: PowerShell@2
+            displayName: "Run pipeline"
+            inputs:
+              pwsh: true
+              targetType: 'filePath'
+              filePath: 'scripts/run_data_pipeline.ps1'
+            env:
+              FABRIC_TENANT_ID: $(FABRIC_TENANT_ID) 
+              FABRIC_CLIENT_ID: $(FABRIC_CLIENT_ID)
+              FABRIC_CLIENT_SECRET: $(FABRIC_CLIENT_SECRET)
+              FABRIC_AUTOMATION_USERNAME: $(FABRIC_AUTOMATION_USERNAME)
+              FABRIC_AUTOMATION_USER_PASSWORD: $(FABRIC_AUTOMATION_USER_PASSWORD)

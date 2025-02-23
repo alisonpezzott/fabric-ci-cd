@@ -1,0 +1,266 @@
+table dim_customer
+	lineageTag: acd776f8-ac2d-444c-ab99-7c35077ee4ac
+	sourceLineageTag: [dbo].[dim_customer]
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 70ccf242-047a-43e9-a68a-2473996a9067
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeoAreaKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0da944cc-851a-4dc8-8b44-1920302a9493
+		sourceLineageTag: GeoAreaKey
+		summarizeBy: none
+		sourceColumn: GeoAreaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDT
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 5ba32961-a274-470e-bc14-70345668d271
+		sourceLineageTag: StartDT
+		summarizeBy: none
+		sourceColumn: StartDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDT
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 09652e9e-39bd-44ff-a8c8-ac7224a761cf
+		sourceLineageTag: EndDT
+		summarizeBy: none
+		sourceColumn: EndDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continent
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2375b8c8-b903-4676-9c85-e1d9482e3be3
+		sourceLineageTag: Continent
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e419918d-1ec9-489b-a83c-e4f9276c3570
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 74fdf23e-cb44-4289-b5bd-4b2d7d37e37e
+		sourceLineageTag: Title
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column GivenName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 99cd76fc-5e88-45a5-8ee9-432fa372905d
+		sourceLineageTag: GivenName
+		summarizeBy: none
+		sourceColumn: GivenName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleInitial
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2406c921-034a-402f-875f-908c2d22c496
+		sourceLineageTag: MiddleInitial
+		summarizeBy: none
+		sourceColumn: MiddleInitial
+
+		annotation SummarizationSetBy = Automatic
+
+	column Surname
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 92687ce0-796a-4d14-a71c-c18e1d61e156
+		sourceLineageTag: Surname
+		summarizeBy: none
+		sourceColumn: Surname
+
+		annotation SummarizationSetBy = Automatic
+
+	column StreetAddress
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 033a6783-76c0-49c6-8d60-eafaefc1a0e6
+		sourceLineageTag: StreetAddress
+		summarizeBy: none
+		sourceColumn: StreetAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f0e00820-0505-45e7-8ea9-c7cd599dc2b6
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 88f9adb4-1ed6-4b1d-a170-40259ae8780b
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateFull
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04ff1e38-f5ce-471c-9014-b1dfe19e511a
+		sourceLineageTag: StateFull
+		summarizeBy: none
+		sourceColumn: StateFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ee6a2738-1e72-475a-bb6a-817440ab2d75
+		sourceLineageTag: ZipCode
+		summarizeBy: none
+		sourceColumn: ZipCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d03fdd8d-8fbb-43f1-a7e6-37046510eed0
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryFull
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 77ff4730-fdf5-470f-9e03-5c81ddd0524c
+		sourceLineageTag: CountryFull
+		summarizeBy: none
+		sourceColumn: CountryFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column Birthday
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: edd384ac-9314-46bb-94d2-c38ef256c5db
+		sourceLineageTag: Birthday
+		summarizeBy: none
+		sourceColumn: Birthday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d9f451ce-eba0-467e-a57c-11030af67698
+		sourceLineageTag: Age
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0237af4f-fd92-42e0-b9e5-a0c1fa4eb34e
+		sourceLineageTag: Occupation
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 36148166-5238-495c-8a4c-a50c52b8d910
+		sourceLineageTag: Company
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 84a65f3a-ad88-4fd0-8a65-5b3700e0b87b
+		sourceLineageTag: Vehicle
+		summarizeBy: none
+		sourceColumn: Vehicle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c63d3fd1-14c9-4305-a3a6-3155d15d2740
+		sourceLineageTag: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 8b8a2dd7-842d-4ee6-82fa-672fde9fbbee
+		sourceLineageTag: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_customer = entity
+		mode: directLake
+		source
+			entityName: dim_customer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
