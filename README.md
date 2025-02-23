@@ -1,11 +1,9 @@
-Meu repositório para desenvolvimento de projetos em CI/CD com Fabric
+## Download
+
+Download support zip from video [🚀 CI/CD com Microsoft Fabric na prática | AzureDevOps | YAML | Fabric REST APIs](https://youtu.be/KiQYkk7_lis):  [📥Download](https://github.com/alisonpezzott/fabric-ci-cd/releases/download/v1.0.0/fabric_ci_cd_demo_01_support.zip)  
 
 
-Download support zip from video demo:  
-https://github.com/alisonpezzott/fabric-ci-cd/releases/download/v1.0.0/fabric_ci_cd_demo_01_support.zip  
-
-
-Sources:
+## Learning Resources
 
 https://learn.microsoft.com/en-us/fabric/cicd/manage-deployment?WT.mc_id=DP-MVP-5004032  
 
