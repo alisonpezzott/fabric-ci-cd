@@ -1,8 +1,8 @@
 # Parameters
 $configsPath = "config.json"
 $adoOrganization = "alisonpezzott"
-$adoProject = "ci_cd_demo"
-$adoRepo = "ci_cd_demo"
+$adoProject = "fabric_ci_cd_demo_01"
+$adoRepo = "fabric_ci_cd_demo_01"
 $gitFolder = "fabric"
 $resourceUrl = "https://api.fabric.microsoft.com"
 

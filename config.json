@@ -1,7 +1,7 @@
 {
   "global": {
     "capacity_id": "",
-    "project": "Fabric_CI_CD_01"
+    "project": "Fabric_CI_CD_Demo_01"
   },
   "blank": {
     "workspace_name": "",
@@ -14,7 +14,7 @@
     "sql_lakehouse_id": ""
   },
   "dev": {
-    "workspace_name": "Fabric_CI_CD_01_DEV",
+    "workspace_name": "Fabric_CI_CD_Demo_01_DEV",
     "lakehouse_name": "lakehouse_001",
     "pipeline_name": "pipeline_001",
     "gateway_connection_id": "",
@@ -24,7 +24,7 @@
     "sql_connection_string": ""
   },
   "test": {
-    "workspace_name": "Fabric_CI_CD_01_TEST",
+    "workspace_name": "Fabric_CI_CD_Demo_01_TEST",
     "lakehouse_name": "lakehouse_001",
     "pipeline_name": "pipeline_001",
     "gateway_connection_id": "",
@@ -34,7 +34,7 @@
     "sql_connection_string": ""
   },
   "prod": {
-    "workspace_name": "Fabric_CI_CD_01_PROD",
+    "workspace_name": "Fabric_CI_CD_Demo_01_PROD",
     "lakehouse_name": "lakehouse_001",
     "pipeline_name": "pipeline_001",
     "gateway_connection_id": "",
