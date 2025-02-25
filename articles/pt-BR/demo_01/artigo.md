@@ -38,7 +38,8 @@ CI/CD é uma abordagem moderna no desenvolvimento de software que significa "Int
 
 Trazendo esta abordagem ao Microsoft Fabric, podemos automatizar e gerenciar o ciclo de vida de desenvolvimento, teste e implantação de soluções analíticas, como pipelines de dados, relatórios Power BI, notebooks e outros artefatos suportados pela plataforma. O Fabric, sendo uma solução unificada de análise de dados da Microsoft, possui integração com Git e pipelines de implantação para suportar práticas de DevOps, permitindo colaboração eficiente, controle de versão e entregas rápidas e confiáveis.  
 
-> [!NOTE] Benefícios no Microsoft Fabric  
+> [!NOTE]  
+> **Benefícios no Microsoft Fabric:**  
 > Colaboração: Vários desenvolvedores trabalham simultaneamente sem conflitos, usando controle de versão. 
 > Qualidade: Testes automatizados detectam problemas mais rapidamente.  
 > Agilidade: Implantações rápidas e consistentes aceleram a entrega.
