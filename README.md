@@ -1,10 +1,13 @@
 ## Videos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KiQYkk7_lis?si=VyY-j6O4ZgVUXlch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+<a href="https://youtu.be/KiQYkk7_lis" target="_blank">
+    <img src="articles\pt-BR\demo_01\assets\thumb_video.png"
+        alt="🚀 CI/CD com Microsoft Fabric na prática | AzureDevOps | YAML | Fabric REST APIs"
+        style="width:100%; max-width:560px: height=auto;"
+    >
+</a>
 
-
-
-
+### 🚀 CI/CD com Microsoft Fabric na prática | AzureDevOps | YAML | Fabric REST APIs  
 
 
 ## Download
