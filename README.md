@@ -1,3 +1,12 @@
+## Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KiQYkk7_lis?si=VyY-j6O4ZgVUXlch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+
+
+
+
+
+
 ## Download
 
 Download support zip from video [🚀 CI/CD com Microsoft Fabric na prática | AzureDevOps | YAML | Fabric REST APIs](https://youtu.be/KiQYkk7_lis):  [📥Download](https://github.com/alisonpezzott/fabric-ci-cd/releases/download/v1.0.0/fabric_ci_cd_demo_01_support.zip)  
