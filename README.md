@@ -29,6 +29,8 @@ https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-automation?tab
 
 https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration?WT.mc_id=DP-MVP-5004032&tabs=azure-devops  
 
+https://learn.microsoft.com/en-us/rest/api/fabric/articles/get-started/deploy-project
+
 https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/cicd/git-integration/ 
 
 https://github.com/microsoft/Analysis-Services/blob/master/pbidevmode/sample-ado-pipelines/ContinuousIntegration-Rules.yml 
